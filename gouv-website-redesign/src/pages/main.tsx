@@ -147,18 +147,18 @@ export function MainPage() {
             </header>
             <div className="w-full h-full flex items-center">
                 <div className="w-full h-full xl:border-r-2 border-neutral-300 flex gap-2 flex-col">
-                    <div className="w-full h-[35rem] flex flex-col xl:flex-row border-b-2 p-5 bg-green-600">
-                    <div className="w-full h-60 flex flex-col justify-center">
+                    <div className="w-full h-[35rem] flex flex-col xl:flex-row border-b-2 p-5 bg-green-600 xl:h-auto">
+                    <div className="w-full h-60 flex flex-col justify-center xl:h-full">
                     <h1 className="text-2xl font-semibold text-background mb-2">Bienvenue sur la page officielle du gouvernement.</h1>
-                    <p className="text-lg text-background mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quam, consectetur consequuntur harum eius in et odit, tempore explicabo iure, voluptatem porro. Numquam eius illum recusandae similique architecto cupiditate maiores?</p>
+                    <p className="text-lg text-background mb-2 xl:w-96">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quam, consectetur consequuntur harum eius in et odit, tempore explicabo iure, voluptatem porro. Numquam eius illum recusandae similique architecto cupiditate maiores?</p>
                     <div className="flex gap-2 items-center">
-                    <Input type="search" placeholder="Recherchez..." className="w-96 bg-transparent placeholder:text-background border-green-500"/>
+                    <Input type="search" placeholder="Recherchez..." className="w-full bg-transparent placeholder:text-background border-green-500 md:w-96"/>
                     <Button variant="outline" size='icon' className="bg-transparent hover:bg-green-500 border-green-500">
                     <Search className="text-background"/>
                     </Button>
                     </div>
                     </div>
-                    <div className="w-full xl:w-96 p-2 mt-4 h-full mb-4">
+                    <div className="w-full xl:w-96 p-2 mt-2 h-full mb-4">
                         <h1 className="text-xl text-background mb-2">Flash Infos</h1>
                         <FlashNewsItem/>
                     </div>
