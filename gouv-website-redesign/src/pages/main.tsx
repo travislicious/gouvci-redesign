@@ -10,12 +10,13 @@ import {
   import { Input } from "@/components/ui/input"
   import { Button } from "@/components/ui/button"
 import { FlashNewsItem } from './../components/flashNewsItem';
+import { NewsItem } from "@/components/newsItem"
 
   
 
 export function MainPage() {
     return (
-        <main className="bg-background w-screen h-screen flex flex-col items-center">
+        <main className="bg-background w-screen h-full flex flex-col items-center">
             <header className="w-full bg-primary p-2 text-background h-16 flex gap-2 items-center border-b-2 border-b-orange-600">
                 <img src={logo} alt="" className="w-12"/>
                 <h1 className="scroll-m-20 text-lg font-semibold tracking-tight xl:text-xl text-background w-full">GOUVERNEMENT DE CÔTE D&apos;IVOIRE.</h1>
@@ -146,7 +147,7 @@ export function MainPage() {
 
             </header>
             <div className="w-full h-full flex items-center">
-                <div className="w-full h-full xl:border-r-2 border-neutral-300 flex gap-2 flex-col">
+                <div className="w-full h-full xl:border-r-2 border-neutral-300 flex gap-2 flex-col bg-muted">
                     <div className="w-full h-[35rem] flex flex-col xl:flex-row border-b-2 p-5 bg-green-600 xl:h-auto">
                     <div className="w-full h-60 flex flex-col justify-center xl:h-full">
                     <h1 className="text-2xl font-semibold text-background mb-2">Bienvenue sur la page officielle du gouvernement.</h1>
@@ -164,6 +165,15 @@ export function MainPage() {
                     </div>
                     </div>
                     <div className="w-full">
+                        <div className="flex items-center w-full p-4 justify-between">
+                            <h1 className="text-3xl font-semibold text-slate-500">Actualités</h1>
+                            <a href="#" className="text-lg text-orange-500 underline">Tout Afficher</a>
+                        </div>
+                        <ul className="flex flex-col gap-2 md:grid p-2 items-center justify-center md:grid-cols-3 md:grid-rows-1 w-full">
+                            <NewsItem/>
+                            <NewsItem/>
+                            <NewsItem/>
+                        </ul>
                     </div>
                     
                 </div>
