@@ -27,10 +27,14 @@ function App() {
         </a>
       </Button>
       <Button variant='outline' size='icon' className='bg-transparent hover:bg-orange-400 p-1 border-orange-400'>
+      <a href="https://www.google.com" target='_blank'>      
         <img src={facebook} alt="Twitter"/>
+        </a>
       </Button>
       <Button variant='outline' size='icon' className='bg-transparent hover:bg-orange-400 p-1 border-orange-400'>
+      <a href="https://www.google.com" target='_blank'>      
         <img src={youtube} alt="Twitter"/>
+        </a>
       </Button>
     </div>
     </main>

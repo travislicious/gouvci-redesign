@@ -1,5 +1,8 @@
 import { Search, Menu } from "lucide-react"
 import logo from '/logo.svg'
+import twitter from '/twitter.svg'
+import facebook from '/facebook.svg'
+import youtube from '/youtube.svg'
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -153,10 +156,27 @@ export function MainPage() {
                     <h1 className="text-2xl font-semibold text-background mb-2">Bienvenue sur la page officielle du gouvernement.</h1>
                     <p className="text-lg text-background mb-2 xl:w-96">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quam, consectetur consequuntur harum eius in et odit, tempore explicabo iure, voluptatem porro. Numquam eius illum recusandae similique architecto cupiditate maiores?</p>
                     <div className="flex gap-2 items-center">
-                    <Input type="search" placeholder="Recherchez..." className="w-full bg-transparent placeholder:text-background border-green-500 md:w-96"/>
+                    <Input type="search" placeholder="Recherchez..." className="w-full bg-transparent placeholder:text-background border-green-500 md:w-96 focus-visible:bg-green-700"/>
                     <Button variant="outline" size='icon' className="bg-transparent hover:bg-green-500 border-green-500">
                     <Search className="text-background"/>
                     </Button>
+                    </div>
+                    <div className="w-96 flex gap-2 h-10 mt-5">
+                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-green-500 p-1 border-green-500'>
+                            <a href="https://www.google.com" target='_blank'>      
+                            <img src={twitter} alt="Twitter"/>
+                            </a>
+                        </Button>
+                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-green-500 p-1 border-green-500'>
+                        <a href="https://www.google.com" target='_blank'>      
+                            <img src={facebook} alt="Twitter"/>
+                            </a>
+                        </Button>
+                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-green-500 p-1 border-green-500'>
+                        <a href="https://www.google.com" target='_blank'>      
+                            <img src={youtube} alt="Twitter"/>
+                            </a>
+                        </Button>
                     </div>
                     </div>
                     <div className="w-full xl:w-96 p-2 mt-2 h-full mb-4">
