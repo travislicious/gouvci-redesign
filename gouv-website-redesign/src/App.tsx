@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 function App() {
 
   return (
-    <main className="bg-primary w-screen h-screen flex flex-col items-center justify-center">
+    <main className="bg-[#FFB534] w-screen h-screen flex flex-col items-center justify-center">
       <img src={logo} alt="" className='w-40 mb-6'/>
     <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-background text-center">Portail du Gouvernement.</h1>
     <p className="leading-7 [&:not(:first-child)]:mt-2 text-background text-xl text-center w-[30rem]">
