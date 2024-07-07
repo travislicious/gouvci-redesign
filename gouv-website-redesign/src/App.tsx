@@ -16,7 +16,7 @@ function App() {
     <p className="leading-7 [&:not(:first-child)]:mt-2 text-background text-xl text-center w-[30rem]">
       Bienvenue sur le portail du gouvernement, la porte d'entrée à toutes les informations du gouvernement ivoirien.
     </p>
-    <Button className='bg-background text-orange-500 text-lg mt-4 hover:bg-muted hover:text-orange-600 hover:scale-105 transition-all duration-200'>
+    <Button className='bg-background text-orange-400 text-lg mt-4 hover:bg-muted hover:text-orange-500 hover:scale-105 transition-all duration-200'>
       <Link to="/home">Entrez sur le site.</Link>
     </Button>
     
