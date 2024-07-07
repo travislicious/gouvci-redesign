@@ -6,7 +6,7 @@ export function NewsItem() {
                     <h1 className="text-2xl font-semibold">News Title</h1>
                     <h1 className="italic">News Date</h1>
                 </div>
-                <h1 className="w-full text-right text-lg underline">Read more.</h1>
+                <a className="w-full text-right text-lg underline cursor-pointer" href="#">Read more.</a>
             </div>
             <h1 className="w-full flex items-end h-full">Lorem ipsum dolor sitamet consectetur adipisicing elit. Quasi doloribus nihil reprehenderit iusto! Ratione, natus quam. In porro asperiores debitis perferendis praesentium. Eos ut, quia quibusdam reprehenderit numquam necessitatibus suscipit.</h1>
         </div>
