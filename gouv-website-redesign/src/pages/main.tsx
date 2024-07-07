@@ -15,6 +15,8 @@ import {
 import { FlashNewsItem } from './../components/flashNewsItem';
 import { NewsItem } from "@/components/newsItem"
 import { FeatureItem } from "@/components/FeatureItem"
+import { AtOne } from "@/components/AtOneItem"
+import { FocusItem } from "@/components/FocusItem"
 
   
 
