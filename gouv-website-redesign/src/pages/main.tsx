@@ -1,4 +1,4 @@
-import { Search, Menu } from "lucide-react"
+import { Search, Menu, Video, Headphones, Newspaper, Image } from "lucide-react"
 import logo from '/logo.svg'
 import twitter from '/twitter.svg'
 import facebook from '/facebook.svg'
@@ -198,13 +198,13 @@ export function MainPage() {
                     </div>
                     <div className="w-full">
                         <div className="flex items-center w-full p-3 justify-between">
-                            <h1 className="text-3xl font-semibold text-neutral-300">Gouv'Productions</h1>
+                            <h1 className="text-3xl font-semibold text-neutral-300 w-full text-center">Gouv'Productions</h1>
                         </div>
                         <ul className="flex flex-col gap-2 md:grid p-2 items-center justify-center md:grid-cols-4 md:grid-rows-1 w-full">
-                            <FeatureItem name="Gouv'Photos" icon="" description="Toute l'actualité en photos."/>
-                            <FeatureItem name="Gouv'Vidéos" icon="" description="Toute l'actualité en vidéo."/>
-                            <FeatureItem name="Gouv'Audios" icon="" description="Toute l'actualité en audio."/>
-                            <FeatureItem name="Gouv'Publications" icon="" description="Toute l'actualité en journaux."/>
+                            <FeatureItem name="Gouv'Photos" icon={<Image className="w-full h-full opacity-70" strokeWidth={0.5}/>} description="Toute l'actualité en photos."/>
+                            <FeatureItem name="Gouv'Vidéos" icon={<Video className="w-full h-full opacity-70" strokeWidth={0.5}/>}  description="Toute l'actualité en vidéo."/>
+                            <FeatureItem name="Gouv'Audios" icon={<Headphones className="w-full h-full opacity-70" strokeWidth={0.5}/>}  description="Toute l'actualité en audio."/>
+                            <FeatureItem name="Gouv'Publications" icon={<Newspaper className="w-full h-full opacity-70" strokeWidth={0.5}/>}  description="Toute l'actualité en journaux."/>
                         </ul>
                     </div>
                     
