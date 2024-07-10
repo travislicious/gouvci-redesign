@@ -17,12 +17,12 @@ import { NewsItem } from "@/components/newsItem"
 import { FeatureItem } from "@/components/FeatureItem"
 import { AtOne } from "@/components/AtOneItem"
 import { FocusItem } from "@/components/FocusItem"
-
+import { DocsList } from "@/components/DocsList"
   
 
 export function MainPage() {
     return (
-        <main className="bg-[#FBF6EE] w-screen h-full flex flex-col items-center">
+        <main className="bg-[#FBF6EE] w-screen h-full flex flex-col items-center no-scrollbar">
             <header className="w-full bg-[#FFB534] p-2 text-background h-16 flex gap-2 items-center">
                 <img src={logo} alt="" className="w-12"/>
                 <h1 className="scroll-m-20 text-lg font-semibold tracking-tight xl:text-xl text-background w-full">GOUVERNEMENT DE CÔTE D&apos;IVOIRE.</h1>
@@ -152,8 +152,8 @@ export function MainPage() {
                 </div>
 
             </header>
-            <div className="w-full h-full flex items-center">
-                <div className="w-full h-full xl:border-r-2 border-neutral-300 flex gap-2 flex-col bg-muted">
+            <div className="w-full h-full flex-col flex xl:flex-row">
+                <div className="w-full h-full xl:border-r-2 xl:border-b-0 border-neutral-300 flex gap-2 flex-col bg-muted border-b-4">
                     <div className="w-full h-[35rem] flex flex-col xl:flex-row border-b-2 p-5 bg-[#65B741] xl:h-auto">
                     <div className="w-full h-60 flex flex-col justify-center xl:h-full">
                     <h1 className="text-2xl font-semibold text-background mb-2">Bienvenue sur la page officielle du gouvernement.</h1>
@@ -187,7 +187,7 @@ export function MainPage() {
                         <FlashNewsItem/>
                     </div>
                     </div>
-                    <div className="w-full">
+                    <div className="w-full h-full">
                         <div className="flex items-center w-full p-3 justify-between">
                             <h1 className="text-3xl font-semibold text-neutral-300">Actualités</h1>
                             <a href="#" className="text-lg text-[#FFB534] hover:underline">Tout Afficher</a>
@@ -198,9 +198,9 @@ export function MainPage() {
                             <NewsItem/>
                         </ul>
                     </div>
-                    <div className="w-full">
+                    <div className="w-full h-full mb-2">
                         <div className="flex items-center w-full p-3 justify-between">
-                            <h1 className="text-3xl font-semibold text-neutral-300 w-full text-center">Gouv'Productions</h1>
+                            <h1 className="text-3xl font-semibold text-neutral-300 w-full text-center md:text-left">Gouv'Productions</h1>
                         </div>
                         <ul className="flex flex-col gap-2 md:grid p-2 items-center justify-center md:grid-cols-4 md:grid-rows-1 w-full">
                             <FeatureItem name="Gouv'Photos" icon={<Image className="w-full h-full opacity-70" strokeWidth={0.5}/>} description="Toute l'actualité en photos."/>
@@ -211,7 +211,11 @@ export function MainPage() {
                     </div>
                     
                 </div>
-                <div className="w-96 h-full hidden xl:flex flex-col"></div>
+                <div className="w-full xl:w-[28rem] h-full xl:flex flex-col divide-y-4 items-center xl:divide-y-2">
+                    <AtOne/>
+                    <FocusItem/>
+                    <DocsList/>
+                </div>
             </div>
         </main>
     )
