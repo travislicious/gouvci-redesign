@@ -22,7 +22,7 @@ import { DocsList } from "@/components/DocsList"
 
 export function MainPage() {
     return (
-        <main className="bg-[#FBF6EE] w-screen h-full flex flex-col items-center no-scrollbar">
+        <main className="bg-[#FBF6EE] w-screen h-full flex flex-col items-center">
             <header className="w-full bg-[#FFB534] p-2 text-background h-16 flex gap-2 items-center">
                 <img src={logo} alt="" className="w-12"/>
                 <h1 className="scroll-m-20 text-lg font-semibold tracking-tight xl:text-xl text-background w-full">GOUVERNEMENT DE CÔTE D&apos;IVOIRE.</h1>
