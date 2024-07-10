@@ -37,7 +37,7 @@ export function MainPage() {
                         <NavigationMenuItem className="bg-transparent">
                         <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Premier Ministre</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fac261] ">
+                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fa9a34] ">
                                 <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
                                 <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
                                 <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
@@ -153,29 +153,29 @@ export function MainPage() {
 
             </header>
             <div className="w-full h-full flex-col flex xl:flex-row">
-                <div className="w-full h-full xl:border-r-2 xl:border-b-0 border-neutral-300 flex gap-2 flex-col bg-muted border-b-4">
+                <div className="w-full h-full xl:border-r-4 xl:border-b-0 border-[#25a574] flex gap-2 flex-col bg-muted border-b-4">
                     <div className="w-full h-[35rem] flex flex-col xl:flex-row border-b-2 p-5 bg-[#009E62] xl:h-auto">
                     <div className="w-full h-60 flex flex-col justify-center xl:h-full">
                     <h1 className="text-2xl font-semibold text-background mb-2">Bienvenue sur la page officielle du gouvernement.</h1>
                     <p className="text-lg text-background mb-2 xl:w-96">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quam, consectetur consequuntur harum eius in et odit, tempore explicabo iure, voluptatem porro. Numquam eius illum recusandae similique architecto cupiditate maiores?</p>
                     <div className="flex gap-2 items-center">
-                    <Input type="search" placeholder="Recherchez..." className="w-full bg-transparent placeholder:text-neutral-200 border-[#70ca4a] md:w-96 focus-visible:bg-[#5fad3e]"/>
-                    <Button variant="outline" size='icon' className="bg-transparent hover:bg-[#5fad3e] border-[#70ca4a]">
+                    <Input type="search" placeholder="Recherchez..." className="w-full bg-transparent placeholder:text-neutral-200 border-[#1ebe81] md:w-96 focus-visible:bg-[#1a9e6b]"/>
+                    <Button variant="outline" size='icon' className="bg-transparent hover:bg-[#1ebe81] border-[#1ebe81]">
                     <Search className="text-background"/>
                     </Button>
                     </div>
                     <div className="w-96 xl:flex gap-2 h-10 mt-5 hidden">
-                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-[#5fad3e] p-1 border-[#70ca4a]'>
+                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-[#1ebe81] p-1 border-[#1ebe81]'>
                             <a href="https://www.google.com" target='_blank'>      
                             <img src={twitter} alt="Twitter"/>
                             </a>
                         </Button>
-                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-[#5fad3e] p-1 border-[#70ca4a]'>
+                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-[#1ebe81] p-1 border-[#1ebe81]'>
                         <a href="https://www.google.com" target='_blank'>      
                             <img src={facebook} alt="Twitter"/>
                             </a>
                         </Button>
-                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-[#5fad3e] p-1 border-[#70ca4a]'>
+                        <Button variant='outline' size='icon' className='bg-transparent hover:bg-[#1ebe81] p-1 border-[#1ebe81]'>
                         <a href="https://www.google.com" target='_blank'>      
                             <img src={youtube} alt="Twitter"/>
                             </a>
@@ -211,12 +211,15 @@ export function MainPage() {
                     </div>
                     
                 </div>
-                <div className="w-full xl:w-[28rem] h-full xl:flex flex-col divide-y-4 items-center xl:divide-y-2">
+                <div className="w-full xl:w-[28rem] h-full xl:flex flex-col divide-y-4 items-center divide-[#196d4d]">
                     <AtOne/>
                     <FocusItem/>
                     <DocsList/>
                 </div>
             </div>
+            <footer className="w-full grid grid-cols-8 grid-rows-2 p-4 bg-[#F57F01] text-white border-t-4 border-[#f39837]">
+                <h1>Hello from the foot.</h1>
+            </footer>
         </main>
     )
 }
