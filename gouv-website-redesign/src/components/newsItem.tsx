@@ -1,6 +1,6 @@
 export function NewsItem() {
     return (
-        <div className="w-[27rem] bg-[#FFB534] h-64 md:w-full p-3 flex flex-col items-center text-neutral-100 hover:scale-95 transition-all duration-200">
+        <div className="w-[27rem] bg-[#F57F01] h-64 md:w-full p-3 flex flex-col items-center text-neutral-100 hover:scale-95 transition-all duration-200">
             <div className="flex w-full gap-2">
                 <div className="flex flex-col gap-1 w-full">
                     <h1 className="text-2xl font-semibold">News Title</h1>

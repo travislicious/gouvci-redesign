@@ -1,6 +1,6 @@
 export function AtOne() {
     return (
-        <div className="w-full bg-[#65B741] text-background p-4 ">
+        <div className="w-full bg-[#009E62] text-background p-4 ">
             <div className="w-full flex items-center justify-between">
                 <h1 className="text-2xl">À la une.</h1>
                 <h1 className="text-lg">01/01/70</h1>
