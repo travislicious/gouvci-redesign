@@ -6,6 +6,7 @@ import { MainPage } from './pages/main.tsx'
 import { ErrorPage } from './ErrorPage.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+
 const router = createBrowserRouter([
   {
     path: '/',

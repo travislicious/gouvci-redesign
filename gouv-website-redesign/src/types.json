@@ -1,0 +1,54 @@
+{
+    "admin_name": "",
+    "admin_pass": "",
+
+    "atOne": {
+        "date": "",
+        "content": ""
+    },
+
+    "focusItems": {
+        "focus1": "",
+        "focus2": "",
+        "focus3": "",
+        "focus4": ""
+    },
+
+    "newsItems": {
+        "news1": {
+            "date": "",
+            "content": "",
+            "title": ""
+        },
+        "news2": {
+            "date": "",
+            "content": "",
+            "title": ""
+        },
+        "news3": {
+            "date": "",
+            "content": "",
+            "title": ""
+        }
+    },
+
+    "flash_news": {
+        "title": "",
+        "content": ""
+    }, 
+
+    "docs": {
+        "0": {
+            "name": "",
+            "count": 0
+        },
+        "1": {
+            "name": "",
+            "count": 0
+        },
+        "2": {
+            "name": "",
+            "count": 0
+        }
+    }
+}

@@ -18,9 +18,25 @@ import { FeatureItem } from "@/components/FeatureItem"
 import { AtOne } from "@/components/AtOneItem"
 import { FocusItem } from "@/components/FocusItem"
 import { DocsList } from "@/components/DocsList"
+import { getDatabase, ref, get } from "firebase/database"
+import { app } from "@/firebase"
+import { useEffect } from "react"
   
 
 export function MainPage() {
+
+    const getFocusData = async() => {
+        const db = getDatabase(app);
+        const snapshot = await ref(db, 'focusItems')
+        get(snapshot).then((data) => {
+            console.log(data.val())
+        })
+    }
+
+    useEffect(() => {
+        getFocusData()
+    }, [])
+
     return (
         <main className="bg-[#FBF6EE] w-screen h-full flex flex-col items-center">
             <header className="w-full bg-[#F57F01] p-2 text-background h-16 flex gap-2 items-center">
@@ -190,7 +206,7 @@ export function MainPage() {
                     <div className="w-full h-full">
                         <div className="flex items-center w-full p-3 justify-between">
                             <h1 className="text-3xl font-semibold text-neutral-300">Actualités</h1>
-                            <a href="#" className="text-center hover:underline" className="text-lg text-[#F57F01] hover:underline">Tout Afficher</a>
+                            <a href="#" className="text-lg text-[#F57F01] hover:underline text-center">Tout Afficher</a>
                         </div>
                         <ul className="flex flex-col gap-2 md:grid p-2 items-center justify-center md:grid-cols-3 md:grid-rows-1 w-full">
                             <NewsItem/>
