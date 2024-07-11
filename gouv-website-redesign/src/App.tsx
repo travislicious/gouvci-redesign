@@ -37,6 +37,7 @@ function App() {
         </a>
       </Button>
     </div>
+    <h1 className="w-full text-2xl font-semibold text-center mt-5 text-white italic">Ce site est juste un redesign de la page officielle.</h1>
     </main>
   )
 }

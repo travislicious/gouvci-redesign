@@ -37,13 +37,13 @@ export function MainPage() {
                         <NavigationMenuItem className="bg-transparent">
                         <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Premier Ministre</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fa9a34] ">
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
+                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  *:mx-2 *:my-0.5 ">
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Missions</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Cabinet</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Discours et Interventions</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Biographie</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Structure et programmes de la Primature</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Anciens Premiers Ministres</a>
                             </ul>
                         </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -54,11 +54,11 @@ export function MainPage() {
                         <NavigationMenuItem className="bg-transparent">
                         <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Gouvernement</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fac261] ">
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
+                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouvernement</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Agenda</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Institutions</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Anciens Gouvernements</a>
                             </ul>
                         </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -69,13 +69,13 @@ export function MainPage() {
                         <NavigationMenuItem className="bg-transparent">
                         <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Actualités</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fac261] ">
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
+                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Politique</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Economie</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Diplomatie</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Santé/Sport</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Société</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Education</a>
                             </ul>
                         </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -86,14 +86,14 @@ export function MainPage() {
                         <NavigationMenuItem className="bg-transparent">
                         <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Côte d&apos;Ivoire.</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fac261] ">
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
+                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Symboles de la République</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Textes Fondamentaux</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Cartes</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Histoire</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Géographie</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Investir</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Voyager et Vivre</a>
                             </ul>
                         </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -104,16 +104,16 @@ export function MainPage() {
                         <NavigationMenuItem className="bg-transparent">
                         <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Salle E-Presse</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fac261] ">
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
+                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Conseil des ministres</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Communiqués</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Déclaration et Discours</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Textes Officiels</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Codes</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Dossiers de Presse</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Notes de Rédactions</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Reportages Photo</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Revue de Presse</a>
                             </ul>
                         </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -124,25 +124,25 @@ export function MainPage() {
                         <NavigationMenuItem className="bg-transparent">
                         <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Produits CICG</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 p-2 divide-y-2 divide-[#fac261] ">
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
-                                <li className="text-lg font-semibold text-background cursor-pointer hover:underline">Test</li>
+                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Agence à la Une</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Chantier d'ici</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Citoyen à la une</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">C'est Ici</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Debrief</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Echange Citoyens</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Actu</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Devinettes</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Eclairage</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Hebdo</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Impact</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Space</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Talk</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Impact Développement</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Minute du développement</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Les Rendez-Vous du Gouvernement</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Micro Citoyen</a>
+                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Tout Savoir Sur</a>
                             </ul>
                         </NavigationMenuContent>
                         </NavigationMenuItem>
