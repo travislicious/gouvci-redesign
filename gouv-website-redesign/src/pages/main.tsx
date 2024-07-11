@@ -153,7 +153,7 @@ export function MainPage() {
 
             </header>
             <div className="w-full h-full flex-col flex xl:flex-row">
-                <div className="w-full h-full xl:border-r-4 xl:border-b-0 border-[#25a574] flex gap-2 flex-col bg-muted border-b-4">
+                <div className="w-full h-full xl:border-b-0 border-[#25a574] flex gap-2 flex-col bg-muted border-b-4">
                     <div className="w-full h-[35rem] flex flex-col xl:flex-row border-b-2 p-5 bg-[#009E62] xl:h-auto">
                     <div className="w-full h-60 flex flex-col justify-center xl:h-full">
                     <h1 className="text-2xl font-semibold text-background mb-2">Bienvenue sur la page officielle du gouvernement.</h1>
@@ -190,7 +190,7 @@ export function MainPage() {
                     <div className="w-full h-full">
                         <div className="flex items-center w-full p-3 justify-between">
                             <h1 className="text-3xl font-semibold text-neutral-300">Actualités</h1>
-                            <a href="#" className="text-lg text-[#F57F01] hover:underline">Tout Afficher</a>
+                            <a href="#" className="text-center hover:underline" className="text-lg text-[#F57F01] hover:underline">Tout Afficher</a>
                         </div>
                         <ul className="flex flex-col gap-2 md:grid p-2 items-center justify-center md:grid-cols-3 md:grid-rows-1 w-full">
                             <NewsItem/>
@@ -217,8 +217,33 @@ export function MainPage() {
                     <DocsList/>
                 </div>
             </div>
-            <footer className="w-full grid grid-cols-8 grid-rows-2 p-4 bg-[#F57F01] text-white border-t-4 border-[#f39837]">
-                <h1>Hello from the foot.</h1>
+            <footer className="w-full flex flex-col bg-[#F57F01] text-white border-t-4 border-[#f39837] p-4">
+                <div className="w-full flex items-center">
+                    <div className="w-full flex items-center justify-center gap-3">
+                    <img src={logo} alt="gouv-logo" width={52}/>
+                    <h1 className="text-2xl font-bold">Copyright 2024, Ayomide.</h1>
+                    </div>
+                    <div></div>
+                </div>
+                <h1 className="w-full text-2xl font-semibold mb-5 text-center mt-4">Ce site est juste un redesign de la page officielle.</h1>
+                <div className="w-full sm:grid grid-cols-4 grid-rows-4 h-full gap-3 flex flex-col">
+                <a href="#" className="text-center hover:underline">Le Magazine</a>
+                <a href="#" className="text-center hover:underline">Le Gouvernement</a>
+                <a href="#" className="text-center hover:underline">Le 1er Ministre</a>
+                <a href="#" className="text-center hover:underline">Ministère à la une</a>
+                <a href="#" className="text-center hover:underline">Grand Dossiers</a>
+                <a href="#" className="text-center hover:underline">Open Data</a>
+                <a href="#" className="text-center hover:underline">Administration Numérique</a>
+                <a href="#" className="text-center hover:underline">Services Publics</a>
+                <a href="#" className="text-center hover:underline">Participation Citoyenne</a>
+                <a href="#" className="text-center hover:underline">Annuaire des services publics</a>
+                <a href="#" className="text-center hover:underline">Portail Fiscal</a>
+                <a href="#" className="text-center hover:underline">Service de validation de déclaration de véhicules</a>
+                <a href="#" className="text-center hover:underline">E-Réclamation CGRAE</a>
+                <a href="#" className="text-center hover:underline">Demandez une prestation de pension de retraite</a>
+                <a href="#" className="text-center hover:underline">Revue de Presse</a>
+                <a href="#" className="text-center hover:underline">Objectifs de développement durable</a>
+                </div>
             </footer>
         </main>
     )
