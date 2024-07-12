@@ -20,21 +20,68 @@ import { FocusItem } from "@/components/FocusItem"
 import { DocsList } from "@/components/DocsList"
 import { getDatabase, ref, get } from "firebase/database"
 import { app } from "@/firebase"
-import { useEffect } from "react"
+import { useEffect, useState } from "react";
+import { FlashNews, SItem, Doc, AtOneType } from "@/dataType";
   
 
 export function MainPage() {
+    const [flashNews, setFlashNews] = useState<FlashNews>() 
+    const [focusNews, setFocusNews] = useState<SItem[]>() 
+    const [news, setNews] = useState<SItem[]>() 
+    const [docs, setDocs] = useState<Doc[]>() 
+    const [atOne, setAtOne] = useState<AtOneType>() 
 
-    const getFocusData = async() => {
+    const fetchFlashNews = async() => {
         const db = getDatabase(app);
-        const snapshot = await ref(db, 'focusItems')
+        const snapshot = await ref(db, 'flashNews')
         get(snapshot).then((data) => {
-            console.log(data.val())
+            setFlashNews(data.val())
         })
     }
 
+    const fetchFocusData = async() => {
+        const db = getDatabase(app);
+        const snapshot = await ref(db, 'focusItems')
+        get(snapshot).then((data) => {
+            setFocusNews(data.val())
+        })
+    }
+
+    const fetchAtOne = async() => {
+        const db = getDatabase(app);
+        const snapshot = await ref(db, 'atOne')
+        get(snapshot).then((data) => {
+            setAtOne(data.val())
+        })
+    }
+
+    const fetchNews = async() => {
+        const db = getDatabase(app);
+        const snapshot = await ref(db, 'newsItems')
+        get(snapshot).then((data) => {
+            setNews(data.val())
+        })
+    }
+
+    const fetchDocs = async() => {
+        const db = getDatabase(app);
+        const snapshot = await ref(db, 'docs')
+        get(snapshot).then((data) => {
+            setDocs(data.val())
+        })
+    
+    }
+
+    const fetchData = async() => {
+        fetchFlashNews()
+        fetchAtOne()
+        fetchFocusData()
+        fetchNews()
+        fetchDocs()
+    }
+
     useEffect(() => {
-        getFocusData()
+        fetchData()
     }, [])
 
     return (
