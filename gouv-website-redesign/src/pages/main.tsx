@@ -26,14 +26,14 @@ import { FlashNews, SItem, Doc, AtOneType } from "@/dataType";
 
 export function MainPage() {
     const [flashNews, setFlashNews] = useState<FlashNews>() 
-    const [focusNews, setFocusNews] = useState<SItem[]>() 
-    const [news, setNews] = useState<SItem[]>() 
-    const [docs, setDocs] = useState<Doc[]>() 
+    const [focusNews, setFocusNews] = useState<SItem[]>([]) 
+    const [news, setNews] = useState<SItem[]>([]) 
+    const [docs, setDocs] = useState<Doc[]>([]) 
     const [atOne, setAtOne] = useState<AtOneType>() 
 
     const fetchFlashNews = async() => {
         const db = getDatabase(app);
-        const snapshot = await ref(db, 'flashNews')
+        const snapshot = await ref(db, 'flash_news')
         get(snapshot).then((data) => {
             setFlashNews(data.val())
         })
@@ -85,7 +85,7 @@ export function MainPage() {
     }, [])
 
     return (
-        <main className="bg-[#FBF6EE] w-screen h-full flex flex-col items-center">
+        <main className="bg-[#FBF6EE] w-screen h-full flex flex-col items-center scrollbar-hide">
             <header className="w-full bg-[#F57F01] p-2 text-background h-16 flex gap-2 items-center">
                 <img src={logo} alt="" className="w-12"/>
                 <h1 className="scroll-m-20 text-lg font-semibold tracking-tight xl:text-xl text-background w-full">GOUVERNEMENT DE CÔTE D&apos;IVOIRE.</h1>
@@ -218,10 +218,10 @@ export function MainPage() {
             <div className="w-full h-full flex-col flex xl:flex-row">
                 <div className="w-full h-full xl:border-b-0 border-[#25a574] flex gap-2 flex-col bg-muted border-b-4">
                     <div className="w-full h-[35rem] flex flex-col xl:flex-row border-b-2 p-5 bg-[#009E62] xl:h-auto">
-                    <div className="w-full h-60 flex flex-col justify-center xl:h-full">
+                    <div className="w-full h-full flex flex-col justify-center xl:h-full">
                     <h1 className="text-2xl font-semibold text-background mb-2">Bienvenue sur la page officielle du gouvernement.</h1>
-                    <p className="text-lg text-background mb-2 xl:w-96">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quam, consectetur consequuntur harum eius in et odit, tempore explicabo iure, voluptatem porro. Numquam eius illum recusandae similique architecto cupiditate maiores?</p>
-                    <div className="flex gap-2 items-center">
+                    <p className="text-lg text-background mb-2 w-[28rem] xl:w-96">Notre plateforme en ligne a été conçue pour fournir aux citoyens des informations complètes et à jour sur les activités gouvernementales, politiques, publiques et les services offerts par les différentes institutions de notre pays.</p>
+                    <div className="flex gap-2 items-center mt-2">
                     <Input type="search" placeholder="Recherchez..." className="w-full bg-transparent placeholder:text-neutral-200 border-[#1ebe81] md:w-96 focus-visible:bg-[#1a9e6b]"/>
                     <Button variant="outline" size='icon' className="bg-transparent hover:bg-[#1ebe81] border-[#1ebe81]">
                     <Search className="text-background"/>
@@ -245,9 +245,9 @@ export function MainPage() {
                         </Button>
                     </div>
                     </div>
-                    <div className="w-full xl:w-96 p-2 mt-2 h-full mb-4">
-                        <h1 className="text-xl text-background mb-2">Flash Infos</h1>
-                        <FlashNewsItem/>
+                    <div className="w-full xl:w-96 p-2 mt-2 h-full mb-4 max-sm:flex max-sm:justify-end max-sm:flex-col">
+                        <h1 className="text-2xl text-background mb-2">Flash Infos</h1>
+                        <FlashNewsItem title={flashNews?.title as string} content={flashNews?.content as string}/>
                     </div>
                     </div>
                     <div className="w-full h-full">
@@ -256,12 +256,12 @@ export function MainPage() {
                             <a href="#" className="text-lg text-[#F57F01] hover:underline text-center">Tout Afficher</a>
                         </div>
                         <ul className="flex flex-col gap-2 md:grid p-2 items-center justify-center md:grid-cols-3 md:grid-rows-1 w-full">
-                            <NewsItem/>
-                            <NewsItem/>
-                            <NewsItem/>
+                            { news.slice(0, 6).map((item) => {
+                                return <NewsItem key={item?.title as string} title={item?.title as string} content={item?.content as string} date={item?.date as string}/>
+                            })}
                         </ul>
                     </div>
-                    <div className="w-full h-full mb-2">
+                    <div className="w-full h-full">
                         <div className="flex items-center w-full p-3 justify-between">
                             <h1 className="text-3xl font-semibold text-neutral-300 w-full text-center md:text-left">Gouv'Productions</h1>
                         </div>
@@ -275,9 +275,10 @@ export function MainPage() {
                     
                 </div>
                 <div className="w-full xl:w-[28rem] h-full xl:flex flex-col divide-y-4 items-center divide-[#196d4d]">
-                    <AtOne/>
-                    <FocusItem/>
-                    <DocsList/>
+                    <AtOne content={atOne?.content as string} date={atOne?.date as string}/>
+
+                    <FocusItem items={focusNews}/>
+                    <DocsList items={docs}/>
                 </div>
             </div>
             <footer className="w-full flex flex-col bg-[#F57F01] text-white border-t-4 border-[#f39837] p-4">

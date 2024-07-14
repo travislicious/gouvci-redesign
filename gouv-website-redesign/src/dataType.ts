@@ -7,6 +7,7 @@ export interface AtOneType {
 export interface Doc {
     name: string;
     link: string;
+    date: string
 }
 
 export interface FlashNews {
