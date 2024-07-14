@@ -10,6 +10,21 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
   } from "@/components/ui/navigation-menu"
+  import {
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+  } from "@/components/ui/drawer"
+  import {
+      Accordion,
+      AccordionContent,
+      AccordionItem,
+      AccordionTrigger,
+    } from "@/components/ui/accordion"
   import { Input } from "@/components/ui/input"
   import { Button } from "@/components/ui/button"
 import { FlashNewsItem } from './../components/flashNewsItem';
@@ -23,6 +38,93 @@ import { app } from "@/firebase"
 import { useEffect, useState } from "react";
 import { FlashNews, SItem, Doc, AtOneType } from "@/dataType";
   
+interface NavigationItem {
+    title: string;
+    links: string[];
+  }
+  
+  const navigationData: NavigationItem[] = [
+    {
+      title: 'Premier Ministre',
+      links: [
+        'Missions',
+        'Cabinet',
+        'Discours et Interventions',
+        'Biographie',
+        'Structure et programmes de la Primature',
+        'Anciens Premiers Ministres',
+      ],
+    },
+    {
+      title: 'Gouvernement',
+      links: [
+        'Gouvernement',
+        'Agenda',
+        'Institutions',
+        'Anciens Gouvernements',
+      ],
+    },
+    {
+      title: 'Actualités',
+      links: [
+        'Politique',
+        'Economie',
+        'Diplomatie',
+        'Santé/Sport',
+        'Société',
+        'Education',
+      ],
+    },
+    {
+      title: 'Côte d\'Ivoire',
+      links: [
+        'Symboles de la République',
+        'Textes Fondamentaux',
+        'Cartes',
+        'Histoire',
+        'Géographie',
+        'Investir',
+        'Voyager et Vivre',
+      ],
+    },
+    {
+      title: 'Salle E-Presse',
+      links: [
+        'Conseil des ministres',
+        'Communiqués',
+        'Déclaration et Discours',
+        'Textes Officiels',
+        'Codes',
+        'Dossiers de Presse',
+        'Notes de Rédactions',
+        'Reportages Photo',
+        'Revue de Presse',
+      ],
+    },
+    {
+      title: 'Produits CICG',
+      links: [
+        'Agence à la Une',
+        'Chantier d\'ici',
+        'Citoyen à la une',
+        'C\'est Ici',
+        'Debrief',
+        'Echange Citoyens',
+        'Gouv\'Actu',
+        'Gouv\'Devinettes',
+        'Gouv\'Eclairage',
+        'Gouv\'Hebdo',
+        'Gouv\'Impact',
+        'Gouv\'Space',
+        'Gouv\'Talk',
+        'Impact Développement',
+        'Minute du développement',
+        'Les Rendez-Vous du Gouvernement',
+        'Micro Citoyen',
+        'Tout Savoir Sur',
+      ],
+    },
+  ];
 
 export function MainPage() {
     const [flashNews, setFlashNews] = useState<FlashNews>() 
@@ -93,127 +195,68 @@ export function MainPage() {
                 <img src={logo} alt="" className="w-12"/>
                 <h1 className="scroll-m-20 text-lg font-semibold tracking-tight xl:text-xl text-background w-full">GOUVERNEMENT DE CÔTE D&apos;IVOIRE.</h1>
                 <div className="flex items-center justify-end w-full xl:hidden">
+                <Drawer direction="right">
+                <DrawerTrigger>
                 <Button className="border-orange-400 hover:bg-orange-400 bg-transparent p-2" variant='outline' size='icon'>
                     <Menu className="text-background"/>
                 </Button>
+                </DrawerTrigger>
+                <DrawerContent className="h-screen top-0 right-0 left-auto mt-0 max-sm:w-[300px] rounded-none bg-[#F57F01] border-none text-white w-[400px] xl:hidden">
+                    <div className="w-full h-full flex flex-col gap-2 p-2">
+                    <DrawerHeader>
+                    <DrawerTitle className="text-3xl">Menu.</DrawerTitle>
+                    </DrawerHeader>
+                    { navigationData.map((item) => {
+                        return (
+                        <Accordion type="single" collapsible>
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>{item?.title}</AccordionTrigger>
+                        <AccordionContent>
+                        <ul className="w-full bg-[#F57F01] flex flex-col gap-2 *:my-0.5">
+                                        { item?.links.map((link) => {
+                                            return (
+                                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">{link}</a>
+                                            )
+                                        })}
+
+                                    </ul>
+                        </AccordionContent>
+                    </AccordionItem>
+                    </Accordion>
+                    )
+                    })}
+                    <DrawerFooter>
+                    <DrawerClose>
+                        <Button className="border-2">Fermer</Button>
+                    </DrawerClose>
+                    </DrawerFooter>
+                    </div>
+                </DrawerContent>
+                </Drawer>
                 </div>
                 <div className="w-full gap-3 items-center justify-end hidden xl:flex">
-                <NavigationMenu className="bg-transparent">
-                    <NavigationMenuList className="bg-transparent">
-                        <NavigationMenuItem className="bg-transparent">
-                        <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Premier Ministre</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  *:mx-2 *:my-0.5 ">
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Missions</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Cabinet</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Discours et Interventions</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Biographie</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Structure et programmes de la Primature</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Anciens Premiers Ministres</a>
-                            </ul>
-                        </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                    </NavigationMenu>
-                <NavigationMenu className="bg-transparent">
-                    <NavigationMenuList className="bg-transparent">
-                        <NavigationMenuItem className="bg-transparent">
-                        <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Gouvernement</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouvernement</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Agenda</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Institutions</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Anciens Gouvernements</a>
-                            </ul>
-                        </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                    </NavigationMenu>
-                <NavigationMenu className="bg-transparent">
-                    <NavigationMenuList className="bg-transparent">
-                        <NavigationMenuItem className="bg-transparent">
-                        <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Actualités</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Politique</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Economie</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Diplomatie</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Santé/Sport</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Société</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Education</a>
-                            </ul>
-                        </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                    </NavigationMenu>
-                <NavigationMenu className="bg-transparent">
-                    <NavigationMenuList className="bg-transparent">
-                        <NavigationMenuItem className="bg-transparent">
-                        <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Côte d&apos;Ivoire.</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Symboles de la République</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Textes Fondamentaux</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Cartes</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Histoire</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Géographie</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Investir</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Voyager et Vivre</a>
-                            </ul>
-                        </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                    </NavigationMenu>
-                <NavigationMenu className="bg-transparent">
-                    <NavigationMenuList className="bg-transparent">
-                        <NavigationMenuItem className="bg-transparent">
-                        <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Salle E-Presse</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Conseil des ministres</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Communiqués</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Déclaration et Discours</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Textes Officiels</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Codes</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Dossiers de Presse</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Notes de Rédactions</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Reportages Photo</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Revue de Presse</a>
-                            </ul>
-                        </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                    </NavigationMenu>
-                <NavigationMenu className="bg-transparent">
-                    <NavigationMenuList className="bg-transparent">
-                        <NavigationMenuItem className="bg-transparent">
-                        <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">Produits CICG</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="w-full bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5  ">
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Agence à la Une</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Chantier d'ici</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Citoyen à la une</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">C'est Ici</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Debrief</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Echange Citoyens</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Actu</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Devinettes</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Eclairage</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Hebdo</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Impact</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Space</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Gouv'Talk</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Impact Développement</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Minute du développement</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Les Rendez-Vous du Gouvernement</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Micro Citoyen</a>
-                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">Tout Savoir Sur</a>
-                            </ul>
-                        </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                    </NavigationMenu>
+  
+                { navigationData.map((item) => {
+                    return (
+                        <NavigationMenu className="bg-transparent">
+                        <NavigationMenuList className="bg-transparent">
+                                <NavigationMenuItem className="bg-transparent">
+                                <NavigationMenuTrigger className="text-background bg-transparent text-lg hover:underline">{item?.title}</NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <ul className="w-32 bg-[#F57F01] flex flex-col gap-2 divide-y  divide-[#fa9a34] *:mx-2 *:my-0.5">
+                                        { item?.links.map((link) => {
+                                            return (
+                                                <a href="#" className="font-semibold text-background cursor-pointer hover:underline">{link}</a>
+                                            )
+                                        })}
+
+                                    </ul>
+                                </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                            </NavigationMenu>
+                    )
+                })}
 
                 </div>
 
